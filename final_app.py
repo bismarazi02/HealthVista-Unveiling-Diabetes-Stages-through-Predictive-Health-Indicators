@@ -17,8 +17,15 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-def header(url):
-     st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{url}</p>', unsafe_allow_html=True)
+# Custom CSS styles for purple background
+custom_styles = """
+    body {
+        background-color: #800080;  /* Purple color */
+    }
+"""
+
+# Apply custom styles
+st.markdown(f'<style>{custom_styles}</style>', unsafe_allow_html=True)
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
