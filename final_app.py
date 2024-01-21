@@ -87,7 +87,7 @@ st.write(user_data)
 import pickle  # Import the pickle module
 
 # Load the pre-trained model
-with open('/logistic_model1', 'rb') as model_file:
+with open('logistic_model1', 'rb') as model_file:
     logistic_reg = pickle.load(model_file)
 
 # ... (rest of your Streamlit code)
