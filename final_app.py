@@ -31,27 +31,44 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    HighBP = st.sidebar.slider('HighBP', 0, 1, 0)
-    HighChol = st.sidebar.slider('HighChol', 0, 1, 0)
-    CholCheck = st.sidebar.slider('CholCheck', 0, 1, 0)
-    BMI = st.sidebar.slider('BMI', 0, 67, 20)
-    Smoker = st.sidebar.slider('Smoker', 0, 1, 0)
-    Stroke = st.sidebar.slider('Stroke', 0, 1, 0)
-    HeartDiseaseorAttack = st.sidebar.slider('HeartDiseaseorAttack', 0, 1, 0)
-    PhysActivity = st.sidebar.slider('PhysActivity', 0, 1, 0)
-    Fruits = st.sidebar.slider('Fruits', 0, 1, 0)
-    Veggies = st.sidebar.slider('Veggies', 0, 1, 0)
-    HvyAlcoholConsump = st.sidebar.slider('HvyAlcoholConsump', 0, 1, 0)
-    AnyHealthcare = st.sidebar.slider('AnyHealthcare', 0, 1, 0)
-    GenHlth = st.sidebar.slider('GenHlth', 0, 1, 0)
-    MentHlth = st.sidebar.slider('MentHlth', 0, 1, 0)
-    PhysHlth = st.sidebar.slider('PhysHlth', 0, 1, 0)
-    DiffWalk = st.sidebar.slider('DiffWalk', 0, 1, 0)
-    Age = st.sidebar.slider('Age', 21, 88, 33)
+    HighBP = st.sidebar.slider('HighBP', 0, 1, 0, format="%d")
+    HighChol = st.sidebar.slider('HighChol', 0, 1, 0, format="%d")
+    CholCheck = st.sidebar.slider('CholCheck', 0, 1, 0, format="%d")
+    BMI = st.sidebar.slider('BMI', 0, 67, 20, format="%d")
+    Smoker = st.sidebar.slider('Smoker', 0, 1, 0, format="%d")
+    Stroke = st.sidebar.slider('Stroke', 0, 1, 0, format="%d")
+    HeartDiseaseorAttack = st.sidebar.slider('HeartDiseaseorAttack', 0, 1, 0, format="%d")
+    PhysActivity = st.sidebar.slider('PhysActivity', 0, 1, 0, format="%d")
+    Fruits = st.sidebar.slider('Fruits', 0, 1, 0, format="%d")
+    Veggies = st.sidebar.slider('Veggies', 0, 1, 0, format="%d")
+    HvyAlcoholConsump = st.sidebar.slider('HvyAlcoholConsump', 0, 1, 0, format="%d")
+    AnyHealthcare = st.sidebar.slider('AnyHealthcare', 0, 1, 0, format="%d")
+    GenHlth = st.sidebar.slider('GenHlth', 0, 1, 0, format="%d")
+    MentHlth = st.sidebar.slider('MentHlth', 0, 1, 0, format="%d")
+    PhysHlth = st.sidebar.slider('PhysHlth', 0, 1, 0, format="%d")
+    DiffWalk = st.sidebar.slider('DiffWalk', 0, 1, 0, format="%d")
+    Age = st.sidebar.slider('Age', 21, 88, 33, format="%d")
     # Use a selectbox for the "Sex" feature
     sex_options = ['Male', 'Female']
     sex_index = st.sidebar.selectbox('Sex', range(len(sex_options)), index=0)  # Default to Male
     sex = sex_options[sex_index]
+    
+    # Convert 0 and 1 to 'No' and 'Yes'
+    HighBP = 'Yes' if HighBP == 1 else 'No'
+    HighChol = 'Yes' if HighChol == 1 else 'No'
+    CholCheck = 'Yes' if CholCheck == 1 else 'No'
+    Smoker = 'Yes' if Smoker == 1 else 'No'
+    Stroke = 'Yes' if Stroke == 1 else 'No'
+    HeartDiseaseorAttack = 'Yes' if HeartDiseaseorAttack == 1 else 'No'
+    PhysActivity = 'Yes' if PhysActivity == 1 else 'No'
+    Fruits = 'Yes' if Fruits == 1 else 'No'
+    Veggies = 'Yes' if Veggies == 1 else 'No'
+    HvyAlcoholConsump = 'Yes' if HvyAlcoholConsump == 1 else 'No'
+    AnyHealthcare = 'Yes' if AnyHealthcare == 1 else 'No'
+    GenHlth = 'Yes' if GenHlth == 1 else 'No'
+    MentHlth = 'Yes' if MentHlth == 1 else 'No'
+    PhysHlth = 'Yes' if PhysHlth == 1 else 'No'
+    DiffWalk = 'Yes' if DiffWalk == 1 else 'No'
 
 
     user_report_data = {
@@ -74,7 +91,11 @@ def user_report():
         'Sex': 1 if sex == 'Male' else 0,
         'Age': float(Age)
     }
+    
     report_data = pd.DataFrame(user_report_data, index=[0])
+    st.subheader('Patient Data')
+    for column, value in user_report_data.items():
+        st.write(f'{column}: {value}')
 
     return report_data
 
