@@ -17,10 +17,13 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-# Custom CSS styles for purple background
 custom_styles = """
+    :root {
+        --background-color: #800080;  /* Purple color */
+    }
+
     body {
-        background-color: #800080;  /* Purple color */
+        background-color: var(--background-color);
     }
 """
 
