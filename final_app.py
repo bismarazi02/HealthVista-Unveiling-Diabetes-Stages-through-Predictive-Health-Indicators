@@ -42,7 +42,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    HighBP= st.sidebar.slider('HighBP(Yes)', 0, 1, 0)
+    HighBP= st.sidebar.slider('HighBP(0=No,1=Yes)', 0, 1, 0)
     HighChol = st.sidebar.slider('HighChol', 0, 1, 0)
     CholCheck = st.sidebar.slider('CholCheck', 0, 1, 0)
     BMI = st.sidebar.slider('BMI', 0, 67, 20)
