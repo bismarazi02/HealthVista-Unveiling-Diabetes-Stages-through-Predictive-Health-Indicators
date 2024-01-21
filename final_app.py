@@ -16,7 +16,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
-df = pd.read_csv('/Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
+df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 st.title('Diabetes Prediction using Health Indicators')
 st.sidebar.header('Patient Data')
 st.subheader('Training Data Stats')
