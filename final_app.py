@@ -17,12 +17,11 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-st.title('<span style="color:blue">HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators</span>', unsafe_allow_html=True)
-st.subheader('<span style="color:green">By BismaRazi</span>', unsafe_allow_html=True)
-st.sidebar.header('<span style="color:red">Patient Data</span>', unsafe_allow_html=True)
-st.subheader('<span style="color:purple">Training Data Stats</span>', unsafe_allow_html=True)
+st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
+st.subheader("**By BismaRazi**")
+st.sidebar.header("**Patient Data**")
+st.subheader("**Training Data Stats**")
 st.write(df.describe())
-
 # X AND Y DATA
 x = df.drop(['Diabetes_binary'], axis = 1)
 y = df.iloc[:, -1]
