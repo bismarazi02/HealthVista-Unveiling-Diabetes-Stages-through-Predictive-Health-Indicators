@@ -42,7 +42,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    HighBP = st.sidebar.slider('HighBP', 0, 1, 0)
+    HighBP(0=No,1=Yes) = st.sidebar.slider('HighBP', 0, 1, 0)
     HighChol = st.sidebar.slider('HighChol', 0, 1, 0)
     CholCheck = st.sidebar.slider('CholCheck', 0, 1, 0)
     BMI = st.sidebar.slider('BMI', 0, 67, 20)
@@ -65,7 +65,7 @@ def user_report():
     sex = sex_options[sex_index]
     
     user_report_data = {
-        'HighBP': float(HighBP),
+        'HighBP': float( HighBP(0=No,1=Yes) ),
         'HighChol': float(HighChol),
         'CholCheck': float(CholCheck),
         'BMI': float(BMI),
