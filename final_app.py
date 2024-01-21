@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-st.title('Diabetes Prediction using Health Indicators')
+st.title('HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators')
+st.subheader('By BismaRazi')
 st.sidebar.header('Patient Data')
 st.subheader('Training Data Stats')
 st.write(df.describe())
