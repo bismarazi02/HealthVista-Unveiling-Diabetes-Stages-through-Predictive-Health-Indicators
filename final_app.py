@@ -115,7 +115,7 @@ else:
 
 
 # Age vs HighBP
-st.title('High Blood Pressure Value Graph (Others vs Yours)')
+st.header('High Blood Pressure Value Graph (Others vs Yours)')
 fig_high_bp = plt.figure()
 ax1 = sns.scatterplot(x='Age', y='HighBP', data=df, hue='Diabetes_binary', palette='Greens')
 ax2 = sns.scatterplot(x=user_data['Age'], y=user_data['HighBP'], s=150, color=color)
