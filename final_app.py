@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
+import base64
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -18,12 +19,16 @@ from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 
-primaryColor = "#0000FF"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F0F0"
-textColor = "#000000"
+
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
+html_temp = """
+<div style ="background-color:pink;padding:13px">
+<h1 style ="color:black;text-align:center;">HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators</h1>
+</div>
+"""
+st.markdown(html_temp, unsafe_allow_html=True)
+
 st.sidebar.header("**Patient Data**")
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
