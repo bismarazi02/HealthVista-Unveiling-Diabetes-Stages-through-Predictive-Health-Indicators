@@ -88,7 +88,7 @@ def user_report():
 
 # PATIENT DATA
 user_data = user_report()
-st.subheader('Patient Data')
+st.subheader('***Patient Data***')
 st.write(user_data)
 
 
