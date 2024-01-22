@@ -20,7 +20,7 @@ import numpy as np
 
 
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
+st.title("***HealthVista Unveiling Diabetes Stages through Predictive Health Indicators***")
 st.subheader("**By BismaRazi**")
 
 st.sidebar.info("About App")
