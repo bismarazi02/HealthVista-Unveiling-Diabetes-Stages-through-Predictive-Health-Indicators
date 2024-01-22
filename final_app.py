@@ -30,6 +30,16 @@ st.markdown(
 )
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #800080;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
 # X AND Y DATA
