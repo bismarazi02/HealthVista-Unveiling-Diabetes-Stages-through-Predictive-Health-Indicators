@@ -25,7 +25,7 @@ html_temp = """
 st.markdown(html_temp, unsafe_allow_html=True)
 
 
-# Apply custom styles
+
 st.markdown(f'<style>{custom_styles}</style>', unsafe_allow_html=True)
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
