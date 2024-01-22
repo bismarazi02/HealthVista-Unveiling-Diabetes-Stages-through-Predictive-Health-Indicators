@@ -24,6 +24,9 @@ st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indica
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
 st.sidebar.slider("About App")
+st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
+st.sidebar.slider("Don't forget to rate this app")
+
 
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
@@ -189,5 +192,3 @@ else:
   output = 'You are Diabetic'
 st.title(output)
 
-st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
-st.sidebar.slider("Don't forget to rate this app")
