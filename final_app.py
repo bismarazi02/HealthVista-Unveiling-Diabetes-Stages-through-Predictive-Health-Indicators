@@ -174,6 +174,13 @@ plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_phys_activity)
 
+# Age vs Sex
+st.header('Sex Distribution (Others vs Yours)')
+fig_sex = plt.figure()
+ax_sex = sns.countplot(x='Sex', data=df, hue='Diabetes_binary', palette='Set2')
+ax_sex.set_title('0 - Healthy & 1 - Unhealthy')
+plt.xticks(rotation=0)
+st.pyplot(fig_sex)
 
 
 # OUTPUT
