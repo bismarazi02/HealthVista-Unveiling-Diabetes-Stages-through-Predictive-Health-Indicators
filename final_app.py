@@ -17,6 +17,13 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
+from streamlit import components
+
+# Custom CSS to set the background color
+bg_color = "#800080"  # Set your desired background color here
+div_html = f'<div style="background-color: {bg_color}; padding: 10px; border-radius: 10px;">'
+st.markdown(div_html, unsafe_allow_html=True)
+
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 st.markdown(
     """
@@ -30,16 +37,6 @@ st.markdown(
 )
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #800080;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
 # X AND Y DATA
