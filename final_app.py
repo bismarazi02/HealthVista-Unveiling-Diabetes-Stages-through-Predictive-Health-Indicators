@@ -17,26 +17,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
-from streamlit import components
 
-# Custom CSS to set the background color
-bg_color = "#800080"  # Set your desired background color here
-div_html = f'<div style="background-color: {bg_color}; padding: 10px; border-radius: 10px;">'
-st.markdown(div_html, unsafe_allow_html=True)
 
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #800080;  /* Set your desired background color here */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
+st.sidebar.slider("About App")
+
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
 # X AND Y DATA
@@ -200,6 +188,6 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
-st.sidebar.slider("About App")
+
 st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
 st.sidebar.slider("Don't forget to rate this app")
