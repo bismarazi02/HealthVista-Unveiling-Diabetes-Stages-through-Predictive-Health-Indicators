@@ -29,7 +29,6 @@ st.sidebar.info("This web app helps you find out whether you have diabetes or no
 user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
 
 # Display a message in the sidebar
-st.sidebar.info("Don't forget to rate this app")
 # Check the user's rating and display a message accordingly
 if user_rating >= 4:
     st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
