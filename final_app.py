@@ -80,10 +80,17 @@ def user_report():
         'Sex': 1 if sex == 'Male' else 0,
         'Age': float(Age)
     }
-    
+
     report_data = pd.DataFrame(user_report_data, index=[0])
 
     return report_data
+user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
+if user_rating >= 4:
+    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
+elif 2 <= user_rating < 4:
+    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
+else:
+    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
 
 # PATIENT DATA
 user_data = user_report()
@@ -191,10 +198,3 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
-user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
-if user_rating >= 4:
-    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
-elif 2 <= user_rating < 4:
-    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
-else:
-    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
