@@ -28,7 +28,7 @@ st.sidebar.info("This web app helps you find out whether you have diabetes or no
 st.sidebar.info("Don't forget to rate this app")
 
 st.sidebar.header("**Please Enter Your Health Indicators by Using Slider*")
-st.subheader("**Training Data Stats**")
+st.subheader("**Data Statistics**")
 st.write(df.describe())
 # X AND Y DATA
 x = df.drop(['Diabetes_binary'], axis = 1)
@@ -38,26 +38,26 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    HighBP= st.sidebar.slider('HighBP(0=No,1=Yes)', 0, 1, 0)
-    HighChol = st.sidebar.slider('HighChol', 0, 1, 0)
-    CholCheck = st.sidebar.slider('CholCheck', 0, 1, 0)
-    BMI = st.sidebar.slider('BMI', 0, 67, 20)
-    Smoker = st.sidebar.slider('Smoker', 0, 1, 0)
-    Stroke = st.sidebar.slider('Stroke', 0, 1, 0)
-    HeartDiseaseorAttack = st.sidebar.slider('HeartDiseaseorAttack', 0, 1, 0)
-    PhysActivity = st.sidebar.slider('PhysActivity', 0, 1, 0)
-    Fruits = st.sidebar.slider('Fruits', 0, 1, 0)
-    Veggies = st.sidebar.slider('Veggies', 0, 1, 0)
+    HighBP= st.sidebar.slider('Do you have HighBP(0=No,1=Yes)', 0, 1, 0)
+    HighChol = st.sidebar.slider('Do you have HighChol(0=No,1=Yes)', 0, 1, 0)
+    CholCheck = st.sidebar.slider('CholCheck(0 = no cholesterol check in 5 years, 1 = yes cholesterol check in 5 years)', 0, 1, 0)
+    BMI = st.sidebar.slider('BMI(Body Mass Index)', 0, 67, 20)
+    Smoker = st.sidebar.slider('Are you Smoker(0=No,1=Yes)', 0, 1, 0)
+    Stroke = st.sidebar.slider('You had a stroke(0=No,1=Yes)', 0, 1, 0)
+    HeartDiseaseorAttack = st.sidebar.slider('Any HeartDisease or Attack(0=No,1=Yes)', 0, 1, 0)
+    PhysActivity = st.sidebar.slider('Physical Activity in Past 30 days - not including job(0=No,1=Yes)', 0, 1, 0)
+    Fruits = st.sidebar.slider('Consume Fruit 1 or more times per day(0=No,1=Yes)', 0, 1, 0)
+    Veggies = st.sidebar.slider('Consume Vegetables 1 or more times per day( 0 = no 1 = yes)', 0, 1, 0)
     HvyAlcoholConsump = st.sidebar.slider('HvyAlcoholConsump', 0, 1, 0)
-    AnyHealthcare = st.sidebar.slider('AnyHealthcare', 0, 1, 0)
-    GenHlth = st.sidebar.slider('GenHlth', 0, 1, 0)
+    AnyHealthcare = st.sidebar.slider('Have any kind of health care coverage, including health insurance( 0 = no 1 = yes)', 0, 1, 0)
+    GenHlth = st.sidebar.slider('Would you say that in general your health is:excellent 2 = very good 3 = good 4 = fair 5 = poor', 1, 5, 1)
     MentHlth = st.sidebar.slider('MentHlth', 0, 1, 0)
     PhysHlth = st.sidebar.slider('PhysHlth', 0, 1, 0)
-    DiffWalk = st.sidebar.slider('DiffWalk', 0, 1, 0)
+    DiffWalk = st.sidebar.slider('DiffWalk(Do you have serious difficulty walking or climbing stairs?)( 0 = no 1 = yes)', 0, 1, 0)
     Age = st.sidebar.slider('Age', 21, 88, 33)
     # Use a selectbox for the "Sex" feature
     sex_options = ['Male', 'Female']
-    sex_index = st.sidebar.selectbox('Sex', range(len(sex_options)), index=0)  # Default to Male
+    sex_index = st.sidebar.selectbox('Sex(0 = female 1 = male)', range(len(sex_options)), index=0)  # Default to Male
     sex = sex_options[sex_index]
     
     user_report_data = {
