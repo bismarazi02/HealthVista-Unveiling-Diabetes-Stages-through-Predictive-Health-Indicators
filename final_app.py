@@ -26,8 +26,8 @@ st.subheader("**By BismaRazi**")
 st.sidebar.info("About App")
 st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
 st.sidebar.info("Don't forget to rate this app")
-
-st.sidebar.header("**Please Enter Your Health Indicators by Using Slider*")
+st.sidebar.header("**Patient Data**")
+st.sidebar.header("**Please Enter Your Health Indicators by Using Slider**")
 st.subheader("**Data Statistics**")
 st.write(df.describe())
 # X AND Y DATA
@@ -103,7 +103,7 @@ with open('logistic_model1', 'rb') as model_file:
 # Use the loaded model for predictions
 user_result = logistic_reg.predict(user_data)
 # VISUALISATIONS
-st.title('Visualised Patient Report')
+st.title('Visualized Patient Report')
 
 
 
