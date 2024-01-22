@@ -17,15 +17,13 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-custom_styles = """
-    :root {
-        --background-color: #800080;  /* Purple color */
-    }
-
-    body {
-        background-color: var(--background-color);
-    }
+html_temp = """
+<div style ="background-color:pink;padding:13px">
+<h1 style ="color:black;text-align:center;"
+</div>
 """
+st.markdown(html_temp, unsafe_allow_html=True)
+
 
 # Apply custom styles
 st.markdown(f'<style>{custom_styles}</style>', unsafe_allow_html=True)
