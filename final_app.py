@@ -26,16 +26,31 @@ st.sidebar.header("**Patient Data**")
 st.sidebar.info("About App")
 st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
 # Add a slider for rating in the sidebar
-user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
+rating_emoji_map = {
+    1: "😞",
+    2: "😐",
+    3: "😊",
+    4: "😄",
+    5: "😍",
+}
+
+# Check the user's rating and display a message with emoji accordingly
+if user_rating in rating_emoji_map:
+    rating_emoji = rating_emoji_map[user_rating]
+    st.sidebar.success(f"Thank you for your rating {rating_emoji}! We appreciate your feedback.")
+else:
+    st.sidebar.warning("Invalid rating. Please rate between 1 and 5.")
+
+#user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
 
 # Display a message in the sidebar
 # Check the user's rating and display a message accordingly
-if user_rating >= 4:
-    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
-elif 2 <= user_rating < 4:
-    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
-else:
-    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
+#if user_rating >= 4:
+   # st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
+#elif 2 <= user_rating < 4:
+    #st.sidebar.info("Thank you for your feedback. We appreciate your input.")
+#else:
+   # st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
 
 
 st.subheader("**Training Data Stats**")
