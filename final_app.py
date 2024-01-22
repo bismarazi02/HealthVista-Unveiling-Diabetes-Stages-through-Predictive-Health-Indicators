@@ -18,15 +18,15 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-
-
-
-st.set_page_config(
-    page_title="HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators",
-    page_icon="✅",
-    layout="wide",  # You can choose "centered" or "wide"
-    initial_sidebar_state="expanded",
-    background_color="#800080",  # Purple color
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #800080;  /* Set your desired background color here */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
