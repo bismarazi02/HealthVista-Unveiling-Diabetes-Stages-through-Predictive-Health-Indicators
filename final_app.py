@@ -116,12 +116,15 @@ else:
 
 # Age vs HighBP
 st.header('High Blood Pressure Value Graph (Others vs Yours)')
-fig_high_bp = plt.figure()
-ax1 = sns.scatterplot(x='Age', y='HighBP', data=df, hue='Diabetes_binary', palette='Greens')
-ax2 = sns.scatterplot(x=user_data['Age'], y=user_data['HighBP'], s=150, color=color)
+fig_high_bp, ax1 = plt.subplots()
+sns.scatterplot(x='Age', y='HighBP', data=df, hue='Diabetes_binary', palette='Greens', ax=ax1)
+sns.scatterplot(x=user_data['Age'], y=user_data['HighBP'], s=150, color=color, ax=ax1)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
+
+# Display the plot in Streamlit
+st.pyplot(fig_high_bp)
 
 # Age vs HighChol
 st.title('High Cholesterol Value Graph (Others vs Yours)')
