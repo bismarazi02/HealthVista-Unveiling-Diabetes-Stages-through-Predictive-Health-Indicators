@@ -192,3 +192,6 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
+st.sidebar.subheader("About App")
+st.sidebar.info("This web app helps you find out whether you are at risk of developing a diabetes.")
+st.sidebar.info("Don't forget to rate this app")
