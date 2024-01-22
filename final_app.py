@@ -25,14 +25,9 @@ st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
 st.sidebar.info("About App")
 st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
+st.sidebar.info("Don't forget to rate this app")
 
-user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
-if user_rating >= 4:
-    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
-elif 2 <= user_rating < 4:
-    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
-else:
-    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
+
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
 # X AND Y DATA
@@ -196,4 +191,10 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
-
+user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
+if user_rating >= 4:
+    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
+elif 2 <= user_rating < 4:
+    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
+else:
+    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
