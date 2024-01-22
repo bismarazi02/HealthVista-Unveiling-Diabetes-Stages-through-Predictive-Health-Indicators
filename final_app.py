@@ -20,15 +20,14 @@ import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 
 
-st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
-st.subheader("**By BismaRazi**")
+
 html_temp = """
-<div style ="background-color:pink;padding:13px">
+<div style ="background-color:purple;padding:13px">
 <h1 style ="color:black;text-align:center;">HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators</h1>
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html=True)
-
+st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
 st.subheader("**Training Data Stats**")
 st.write(df.describe())
