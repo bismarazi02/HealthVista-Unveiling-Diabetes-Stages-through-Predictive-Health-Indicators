@@ -124,7 +124,7 @@ plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
 
 # Age vs HighChol
-st.tite('High Cholesterol Value Graph (Others vs Yours)')
+st.title('High Cholesterol Value Graph (Others vs Yours)')
 fig_high_chol = plt.figure()
 ax3 = sns.scatterplot(x='Age', y='HighChol', data=df, hue='Diabetes_binary', palette='magma')
 ax4 = sns.scatterplot(x=user_data['Age'], y=user_data['HighChol'], s=150, color=color)
