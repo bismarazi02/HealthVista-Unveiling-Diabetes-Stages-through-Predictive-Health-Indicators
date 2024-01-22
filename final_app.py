@@ -21,12 +21,13 @@ df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 
 
 
-html_temp = """
-<div style ="background-color:purple;padding:13px">
-<h1 style ="color:black;text-align:center;">HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators</h1>
-</div>
-"""
-st.markdown(html_temp, unsafe_allow_html=True)
+st.set_page_config(
+    page_title="HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators",
+    page_icon="✅",
+    layout="wide",  # You can choose "centered" or "wide"
+    initial_sidebar_state="expanded",
+    background_color="#800080",  # Purple color
+)
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
 st.subheader("**Training Data Stats**")
@@ -192,6 +193,6 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
-st.sidebar.subheader("About App")
-st.sidebar.info("This web app helps you find out whether you are at risk of developing a diabetes.")
-st.sidebar.info("Don't forget to rate this app")
+st.sidebar.slider("About App")
+st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
+st.sidebar.slider("Don't forget to rate this app")
