@@ -23,7 +23,20 @@ df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
+st.sidebar.info("About App")
+st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
+# Add a slider for rating in the sidebar
+user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
 
+# Display a message in the sidebar
+st.sidebar.info("Don't forget to rate this app")
+# Check the user's rating and display a message accordingly
+if user_rating >= 4:
+    st.sidebar.success("Thank you for your positive feedback! We're glad you enjoyed the app.")
+elif 2 <= user_rating < 4:
+    st.sidebar.info("Thank you for your feedback. We appreciate your input.")
+else:
+    st.sidebar.warning("We're sorry to hear that you didn't find the app helpful. Please let us know how we can improve.")
 
 
 st.subheader("**Training Data Stats**")
@@ -87,9 +100,7 @@ def user_report():
 user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
-st.sidebar.info("About App")
-st.sidebar.info("This web app helps you find out whether you are at risk of developing a diabetes.")
-st.sidebar.info("Don't forget to rate this app")
+
 
 import pickle  # Import the pickle module
 
