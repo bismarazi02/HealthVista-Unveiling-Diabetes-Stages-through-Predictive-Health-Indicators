@@ -87,9 +87,9 @@ def user_report():
 user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
-st.sidebar.slider("About App")
-st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
-st.sidebar.slider("Don't forget to rate this app")
+st.sidebar.info("About App")
+st.sidebar.info("This web app helps you find out whether you are at risk of developing a diabetes.")
+st.sidebar.info("Don't forget to rate this app")
 
 import pickle  # Import the pickle module
 
