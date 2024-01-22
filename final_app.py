@@ -26,6 +26,7 @@ st.sidebar.header("**Patient Data**")
 st.sidebar.info("About App")
 st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
 # Add a slider for rating in the sidebar
+user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
 rating_emoji_map = {
     1: "😞",
     2: "😐",
@@ -41,7 +42,7 @@ if user_rating in rating_emoji_map:
 else:
     st.sidebar.warning("Invalid rating. Please rate between 1 and 5.")
 
-#user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
+
 
 # Display a message in the sidebar
 # Check the user's rating and display a message accordingly
