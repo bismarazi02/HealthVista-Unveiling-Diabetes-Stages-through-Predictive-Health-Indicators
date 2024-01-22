@@ -21,14 +21,14 @@ import numpy as np
 
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 st.title("***HealthVista Unveiling Diabetes Stages through Predictive Health Indicators***")
-st.subheader("**By BismaRazi**")
+st.subheader("****By BismaRazi****")
 
 st.sidebar.info("About App")
 st.sidebar.info("This web app helps you find out whether you have diabetes or not.")
 st.sidebar.info("Don't forget to rate this app")
 st.sidebar.header("**Patient Data**")
 st.sidebar.header("**Please Enter Your Health Indicators by Using Slider**")
-st.subheader("**Data Statistics**")
+st.subheader("***Data Statistics***")
 st.write(df.describe())
 # X AND Y DATA
 x = df.drop(['Diabetes_binary'], axis = 1)
