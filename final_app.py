@@ -186,14 +186,14 @@ plt.xticks(rotation=0)
 st.pyplot(fig_sex)
 
 
-# OUTPUT
-st.subheader('Your Report: ')
-output=''
-if user_result[0]==0:
-  output = 'You are not Diabetic'
-else:
-  output = 'You are Diabetic'
-st.title(output)
+st.subheader('***Your Report***: ')
+output = ''
+if user_result is not None:  # Check if the user has provided input
+    if user_result[0] == 0:
+        output = 'You are not Diabetic'
+    else:
+        output = 'You are Diabetic'
+    st.title(output)
 
 
  
