@@ -17,7 +17,16 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
-
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20231024021028/ri/750/src/images/Article_Images/ImageForArticle_975_16981278236522842.png");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
