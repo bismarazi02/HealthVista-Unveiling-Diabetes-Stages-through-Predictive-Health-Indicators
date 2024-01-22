@@ -23,9 +23,7 @@ df = pd.read_csv('Dataset=diabetes_binary_health_indicators_BRFSS2015.csv')
 st.title("HealthVista-Unveiling-Diabetes-Stages-through-Predictive-Health-Indicators")
 st.subheader("**By BismaRazi**")
 st.sidebar.header("**Patient Data**")
-st.sidebar.slider("About App")
-st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
-st.sidebar.slider("Don't forget to rate this app")
+
 
 
 st.subheader("**Training Data Stats**")
@@ -89,7 +87,9 @@ def user_report():
 user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
-
+st.sidebar.slider("About App")
+st.sidebar.slider("This web app helps you find out whether you are at risk of developing a diabetes.")
+st.sidebar.slider("Don't forget to rate this app")
 
 import pickle  # Import the pickle module
 
