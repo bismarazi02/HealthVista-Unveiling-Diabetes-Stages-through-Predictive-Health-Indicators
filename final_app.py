@@ -124,7 +124,7 @@ plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
 
 # Age vs HighChol
-st.info('High Cholesterol Value Graph (Others vs Yours)')
+st.tite('High Cholesterol Value Graph (Others vs Yours)')
 fig_high_chol = plt.figure()
 ax3 = sns.scatterplot(x='Age', y='HighChol', data=df, hue='Diabetes_binary', palette='magma')
 ax4 = sns.scatterplot(x=user_data['Age'], y=user_data['HighChol'], s=150, color=color)
@@ -135,7 +135,7 @@ st.pyplot(fig_high_chol)
 
 
 # Age vs CholCheck
-st.info('Cholesterol Check Value Graph (Others vs Yours)')
+st.title('Cholesterol Check Value Graph (Others vs Yours)')
 fig_chol_check = plt.figure()
 ax5 = sns.scatterplot(x='Age', y='CholCheck', data=df, hue='Diabetes_binary', palette='Reds')
 ax6 = sns.scatterplot(x=user_data['Age'], y=user_data['CholCheck'], s=150, color=color)
@@ -145,7 +145,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_chol_check)
 
 # Age vs BMI
-st.info('BMI Value Graph (Others vs Yours)')
+st.title('BMI Value Graph (Others vs Yours)')
 fig_bmi = plt.figure()
 ax7 = sns.scatterplot(x='Age', y='BMI', data=df, hue='Diabetes_binary', palette='Blues')
 ax8 = sns.scatterplot(x=user_data['Age'], y=user_data['BMI'], s=150, color=color)
@@ -155,7 +155,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_bmi)
 
 # Age vs Smoker
-st.info('Smoker Value Graph (Others vs Yours)')
+st.title('Smoker Value Graph (Others vs Yours)')
 fig_smoker = plt.figure()
 ax9 = sns.scatterplot(x='Age', y='Smoker', data=df, hue='Diabetes_binary', palette='rocket')
 ax10 = sns.scatterplot(x=user_data['Age'], y=user_data['Smoker'], s=150, color=color)
@@ -165,7 +165,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_smoker)
 
 # Age vs PhysActivity
-st.info('Physical Activity Value Graph (Others vs Yours)')
+st.title('Physical Activity Value Graph (Others vs Yours)')
 fig_phys_activity = plt.figure()
 ax11 = sns.scatterplot(x='Age', y='PhysActivity', data=df, hue='Diabetes_binary', palette='rainbow')
 ax12 = sns.scatterplot(x=user_data['Age'], y=user_data['PhysActivity'], s=150, color=color)
@@ -184,7 +184,7 @@ if user_result[0]==0:
 else:
   output = 'You are Diabetic'
 st.title(output)
-report_data = pd.DataFrame(user_report_data, index=[0])
+
 
  
 user_rating = st.sidebar.slider("Rate this app (1 - 5)", 1, 5, 3)
