@@ -31,6 +31,22 @@ st.sidebar.header("**Please Enter Your Health Indicators by Using Slider**")
 st.subheader("***Data Statistics***")
 st.write(df.describe())
 # X AND Y DATA
+age_groups = {
+    1: (18, 24),
+    2: (25, 29),
+    3: (30, 34),
+    4: (35, 39),
+    5: (40, 44),
+    6: (45, 49),
+    7: (50, 54),
+    8: (55, 59),
+    9: (60, 64),
+    10: (65, 69),
+    11: (70, 74),
+    12: (75, 79),
+    13: (80, 100)  
+}
+
 df['Age_Midpoint'] = df['Age'].map(lambda x: sum(age_groups[x]) / 2)
 x = df.drop(['Diabetes_binary'], axis = 1)
 y = df.iloc[:, -1]
