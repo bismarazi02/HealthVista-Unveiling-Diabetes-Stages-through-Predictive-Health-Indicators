@@ -78,7 +78,8 @@ def user_report():
         'PhysHlth': float(PhysHlth),
         'DiffWalk': float(DiffWalk),
         'Sex': 1 if sex == 'Male' else 0,
-        'Age': float(Age_Midpoint)
+       'Age': float(Age_Midpoint),
+       'Age_Midpoint': float(Age_Midpoint), 
     }
 
     report_data = pd.DataFrame(user_report_data, index=[0])
@@ -140,7 +141,7 @@ st.pyplot(fig_high_chol)
 # Age vs CholCheck
 st.title('Cholesterol Check Value Graph (Others vs Yours)')
 fig_chol_check = plt.figure()
-ax5 = sns.scatterplot(x='Age', y='CholCheck', data=df, hue='Diabetes_binary', palette='Reds')
+ax5 = sns.scatterplot(x='Age_Midpoint', y='CholCheck', data=df, hue='Diabetes_binary', palette='Reds')
 ax6 = sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['CholCheck'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
@@ -150,7 +151,7 @@ st.pyplot(fig_chol_check)
 # Age vs BMI
 st.title('BMI Value Graph (Others vs Yours)')
 fig_bmi = plt.figure()
-ax7 = sns.scatterplot(x='Age', y='BMI', data=df, hue='Diabetes_binary', palette='Blues')
+ax7 = sns.scatterplot(x='Age_Midpoint', y='BMI', data=df, hue='Diabetes_binary', palette='Blues')
 ax8 = sns.scatterplot(x=user_data['Age'], y=user_data['BMI'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 70, 5))
@@ -160,7 +161,7 @@ st.pyplot(fig_bmi)
 # Age vs Smoker
 st.title('Smoker Value Graph (Others vs Yours)')
 fig_smoker = plt.figure()
-ax9 = sns.scatterplot(x='Age', y='Smoker', data=df, hue='Diabetes_binary', palette='rocket')
+ax9 = sns.scatterplot(x='Age_Midpoint', y='Smoker', data=df, hue='Diabetes_binary', palette='rocket')
 ax10 = sns.scatterplot(x=user_data['Age'], y=user_data['Smoker'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
@@ -170,7 +171,7 @@ st.pyplot(fig_smoker)
 # Age vs PhysActivity
 st.title('Physical Activity Value Graph (Others vs Yours)')
 fig_phys_activity = plt.figure()
-ax11 = sns.scatterplot(x='Age', y='PhysActivity', data=df, hue='Diabetes_binary', palette='rainbow')
+ax11 = sns.scatterplot(x='Age_Midpoint', y='PhysActivity', data=df, hue='Diabetes_binary', palette='rainbow')
 ax12 = sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['PhysActivity'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
