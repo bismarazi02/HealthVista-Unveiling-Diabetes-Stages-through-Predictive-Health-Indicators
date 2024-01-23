@@ -71,7 +71,7 @@ def user_report():
     MentHlth = st.sidebar.slider('MentHlth', 0, 1, 0)
     PhysHlth = st.sidebar.slider('PhysHlth', 0, 1, 0)
     DiffWalk = st.sidebar.slider('DiffWalk(Do you have serious difficulty walking or climbing stairs?)( 0 = no 1 = yes)', 0, 1, 0)
-    Age_Midpoint = st.sidebar.slider('Age_Midpoint', 21, 88, 33)
+    Age_Midpoint = st.sidebar.slider('Age', 21, 100, 33)
     # Use a selectbox for the "Sex" feature
     sex_options = ['Male', 'Female']
     sex_index = st.sidebar.selectbox('Sex(0 = female 1 = male)', range(len(sex_options)), index=0)  # Default to Male
