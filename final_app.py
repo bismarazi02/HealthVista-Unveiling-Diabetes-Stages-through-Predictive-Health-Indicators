@@ -95,8 +95,7 @@ def user_report():
         'PhysHlth': float(PhysHlth),
         'DiffWalk': float(DiffWalk),
         'Sex': 1 if sex == 'Male' else 0,
-       'Age': float(Age_Midpoint),
-       'Age_Midpoint': float(Age_Midpoint), 
+        'Age_Midpoint': float(Age_Midpoint), 
     }
 
     report_data = pd.DataFrame(user_report_data, index=[0])
