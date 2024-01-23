@@ -54,7 +54,7 @@ def user_report():
     MentHlth = st.sidebar.slider('MentHlth', 0, 1, 0)
     PhysHlth = st.sidebar.slider('PhysHlth', 0, 1, 0)
     DiffWalk = st.sidebar.slider('DiffWalk(Do you have serious difficulty walking or climbing stairs?)( 0 = no 1 = yes)', 0, 1, 0)
-    Age = st.sidebar.slider('Age', 21, 88, 33)
+    Age_Midpoint = st.sidebar.slider('Age', 21, 88, 33)
     # Use a selectbox for the "Sex" feature
     sex_options = ['Male', 'Female']
     sex_index = st.sidebar.selectbox('Sex(0 = female 1 = male)', range(len(sex_options)), index=0)  # Default to Male
@@ -78,7 +78,7 @@ def user_report():
         'PhysHlth': float(PhysHlth),
         'DiffWalk': float(DiffWalk),
         'Sex': 1 if sex == 'Male' else 0,
-        'Age': float(Age)
+        'Age': float(Age_Midpoint)
     }
 
     report_data = pd.DataFrame(user_report_data, index=[0])
@@ -118,7 +118,7 @@ else:
 st.header('High Blood Pressure Value Graph (Others vs Yours)')
 fig_high_bp, ax1 = plt.subplots()
 sns.scatterplot(x='Age', y='HighBP', data=df, hue='Diabetes_binary', palette='Greens', ax=ax1)
-sns.scatterplot(x=user_data['Age'], y=user_data['HighBP'], s=150, color=color, ax=ax1)
+sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['HighBP'], s=150, color=color, ax=ax1)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
@@ -130,7 +130,7 @@ st.pyplot(fig_high_bp)
 st.title('High Cholesterol Value Graph (Others vs Yours)')
 fig_high_chol = plt.figure()
 ax3 = sns.scatterplot(x='Age', y='HighChol', data=df, hue='Diabetes_binary', palette='magma')
-ax4 = sns.scatterplot(x=user_data['Age'], y=user_data['HighChol'], s=150, color=color)
+ax4 = sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['HighChol'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
@@ -141,7 +141,7 @@ st.pyplot(fig_high_chol)
 st.title('Cholesterol Check Value Graph (Others vs Yours)')
 fig_chol_check = plt.figure()
 ax5 = sns.scatterplot(x='Age', y='CholCheck', data=df, hue='Diabetes_binary', palette='Reds')
-ax6 = sns.scatterplot(x=user_data['Age'], y=user_data['CholCheck'], s=150, color=color)
+ax6 = sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['CholCheck'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
@@ -171,19 +171,13 @@ st.pyplot(fig_smoker)
 st.title('Physical Activity Value Graph (Others vs Yours)')
 fig_phys_activity = plt.figure()
 ax11 = sns.scatterplot(x='Age', y='PhysActivity', data=df, hue='Diabetes_binary', palette='rainbow')
-ax12 = sns.scatterplot(x=user_data['Age'], y=user_data['PhysActivity'], s=150, color=color)
+ax12 = sns.scatterplot(x=user_data['Age_Midpoint'], y=user_data['PhysActivity'], s=150, color=color)
 plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 2, 1))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_phys_activity)
 
-# Age vs Sex
-st.header('Sex Distribution (Others vs Yours)')
-fig_sex = plt.figure()
-ax_sex = sns.countplot(x='Sex', data=df, hue='Diabetes_binary', palette='Set2')
-ax_sex.set_title('0 - Healthy & 1 - Unhealthy')
-plt.xticks(rotation=0)
-st.pyplot(fig_sex)
+
 
 # COLOR FUNCTION
 if user_result[0] == 0:
