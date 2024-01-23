@@ -95,7 +95,7 @@ st.write(user_data)
 import pickle  # Import the pickle module
 
 # Load the pre-trained model
-with open('logistic_model1', 'rb') as model_file:
+with open('logistic_model2', 'rb') as model_file:
     logistic_reg = pickle.load(model_file)
 
 # ... (rest of your Streamlit code)
@@ -185,15 +185,18 @@ ax_sex.set_title('0 - Healthy & 1 - Unhealthy')
 plt.xticks(rotation=0)
 st.pyplot(fig_sex)
 
+# COLOR FUNCTION
+if user_result[0] == 0:
+    color = 'blue'
+    output = 'You are not Diabetic'
+else:
+    color = 'red'
+    output = 'You are Diabetic'
 
-st.subheader('***Your Report***: ')
-output = ''
-if user_result is not None:  # Check if the user has provided input
-    if user_result[0] == 0:
-        output = 'You are not Diabetic'
-    else:
-        output = 'You are Diabetic'
-    st.title(output)
+# Display the result with colored text
+st.subheader('***Your Report***:')
+st.markdown(f'<p style="color:{color}; font-size:20px;">{output}</p>', unsafe_allow_html=True)
+
 
 
  
